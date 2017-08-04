@@ -1,0 +1,22 @@
+---
+
+ - name: do the
+   hosts: lab
+   become: True
+   gather_facts: False
+   tasks: 
+   - yum:
+       name: "{{ item }}"
+       state: installed
+     with_items:
+      - "php"
+
+   roles:
+     - ansible-role-hosts-inventory
+
+ - name: do the
+   hosts: lab
+   become: True
+   roles:
+     - ansible-role-apache
+     - httpd_content

@@ -1,0 +1,6 @@
+---
+
+ - src: https://github.com/geerlingguy/ansible-role-apache
+   path: roles
+ - src: https://github.com/CSCfi/ansible-role-hosts-inventory
+   path: roles

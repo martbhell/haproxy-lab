@@ -1,0 +1,12 @@
+---
+apache_listen_port: 8080
+apache_vhosts:
+  - {servername: "1.example.com", documentroot: "/var/www/vhosts/1"}
+  - {servername: "2.example.com", documentroot: "/var/www/vhosts/2"}
+  - {servername: "3.example.com", documentroot: "/var/www/vhosts/3"}
+  - {servername: "4.example.com", documentroot: "/var/www/vhosts/4"}
+  - {servername: "5.example.com", documentroot: "/var/www/vhosts/5"}
+hosts_file_to_populate: "/etc/hosts"
+hosts_file_ansible_group_to_hosts_file: "{{ groups.extra_dns }}"
+hosts_ip_source: "template"
+...

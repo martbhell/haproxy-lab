@@ -1,0 +1,10 @@
+[lab]
+193.166.24.19 ansible_ssh_user=cloud-user
+
+[extra_dns]
+1.example.com ip_address=127.0.1.1
+2.example.com ip_address=127.0.1.2
+3.example.com ip_address=127.0.1.3
+4.example.com ip_address=127.0.1.4
+5.example.com ip_address=127.0.1.5
+lab.novalocal ip_address=127.0.0.1

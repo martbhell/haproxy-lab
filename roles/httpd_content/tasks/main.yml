@@ -1,0 +1,18 @@
+---
+
+- name: mkdir docroots
+  file:
+    path: "{{ item.documentroot }}"
+    state: directory
+    mode: 0755
+    owner: apache
+  with_items: "{{ apache_vhosts }}"
+
+- name: template in content
+  template:
+    src: "index.php.j2"
+    dest: "{{ item.documentroot }}/index.php"
+    backup: True
+    owner: apache
+    mode: 0644
+  with_items: "{{ apache_vhosts }}"
