@@ -4,3 +4,5 @@
    path: roles
  - src: https://github.com/CSCfi/ansible-role-hosts-inventory
    path: roles
+ - src: https://github.com/geerlingguy/ansible-role-haproxy
+   path: roles

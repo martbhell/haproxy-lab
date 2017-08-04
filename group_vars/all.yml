@@ -9,4 +9,13 @@ apache_vhosts:
 hosts_file_to_populate: "/etc/hosts"
 hosts_file_ansible_group_to_hosts_file: "{{ groups.extra_dns }}"
 hosts_ip_source: "template"
+
+# TODO. some kind of jinja2 | map to map the apache_vhosts to this?
+haproxy_backend_servers:
+  - name: app1
+    address: 1.example.com:8080
+  - name: app2
+    address: 2.example.com:8080
+  - name: app3
+    address: 3.example.com:8080
 ...

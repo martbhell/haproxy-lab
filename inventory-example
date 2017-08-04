@@ -1,7 +1,8 @@
 [lab]
-193.166.24.19 ansible_ssh_user=cloud-user
+10.0.0.1 ansible_ssh_user=cloud-user
 
 [extra_dns]
+frontend.example.com ip_address=127.1.1.1
 1.example.com ip_address=127.0.1.1
 2.example.com ip_address=127.0.1.2
 3.example.com ip_address=127.0.1.3

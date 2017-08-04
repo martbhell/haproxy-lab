@@ -14,9 +14,15 @@
    roles:
      - ansible-role-hosts-inventory
 
- - name: do the
+ - name: do the httpd and content
    hosts: lab
    become: True
    roles:
      - ansible-role-apache
      - httpd_content
+
+ - name: do the lb
+   hosts: lab
+   become: True
+   roles:
+     - ansible-role-haproxy
