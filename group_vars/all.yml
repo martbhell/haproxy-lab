@@ -18,4 +18,8 @@ haproxy_backend_servers:
     address: 2.example.com:8080
   - name: app3
     address: 3.example.com:8080
+#
+# these are the same as in the role, but we re-use this in the ops_playbooks
+haproxy_socket: "/var/lib/haproxy/stats"
+haproxy_backend_name: "habackend"
 ...

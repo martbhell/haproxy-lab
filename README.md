@@ -6,6 +6,11 @@ Idea: setup several http servers and put haproxy in front to load balance!
  - one httpd with many virtualservers
  - one haproxy in front pointing to these
 
+requirements
+------------
+
+ansible docs says netcat is needed, but setting state of backends work without it. Installing socat/nc for manual commands.
+
 usage
 ----------
 
@@ -69,4 +74,17 @@ path: /var/www/vhosts/3 </br>
 [cloud-user@lab ~]$
 ```
 
+
+ops_playbooks
+---
+
+manual:  
+```
+echo "disable server habackend/app1" | sudo socat stdio /var/lib/haproxy/stats
+```
+
+with ansible:
+```
+ ansible-playbook ops_playbooks/state_backends.yml -e app=app1 -e state=enabled
+```
 

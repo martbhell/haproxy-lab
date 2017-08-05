@@ -1,0 +1,12 @@
+---
+
+ - name: set state on backends
+   hosts: lab
+   become: True
+   gather_facts: False
+   tasks: 
+   - haproxy:
+       backend: "{{ haproxy_backend_name }}"
+       host: "{{ app }}"
+       state: "{{ state }}"
+       socket: "{{ haproxy_socket }}"
