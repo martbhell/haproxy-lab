@@ -1,0 +1,16 @@
+---
+
+ - name: enable all and set weights
+   hosts: lab
+   become: True
+   gather_facts: False
+   tasks: 
+   - haproxy:
+       wait: True
+       fail_on_not_found: True
+       shutdown_sessions: False
+       host: "{{ item.name }}"
+       socket: "{{ haproxy_socket }}"
+       weight: "{{ item.weight }}"
+       state: enabled
+     with_items: "{{ haproxy_backend_servers }}"

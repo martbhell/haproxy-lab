@@ -14,10 +14,13 @@ hosts_ip_source: "template"
 haproxy_backend_servers:
   - name: app1
     address: 1.example.com:8080
+    weight: 1
   - name: app2
     address: 2.example.com:8080
+    weight: 100
   - name: app3
     address: 3.example.com:8080
+    weight: 256
 #
 # these are the same as in the role, but we re-use this in the ops_playbooks
 haproxy_socket: "/var/lib/haproxy/stats"

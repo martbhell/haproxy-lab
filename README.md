@@ -1,4 +1,4 @@
-haproxsy-lab
+haproxy-lab
 -------------
 
 Idea: setup several http servers and put haproxy in front to load balance!
@@ -9,7 +9,7 @@ Idea: setup several http servers and put haproxy in front to load balance!
 requirements
 ------------
 
-ansible docs says netcat is needed, but setting state of backends work without it. Installing socat/nc for manual commands.
+ansible docs says netcat is needed, but setting state and weights of backends work without it. Installing socat/nc for manual commands.
 
 usage
 ----------

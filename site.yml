@@ -1,6 +1,6 @@
 ---
 
- - name: do the
+ - name: install some extra programs and setup /etc/hosts entries
    hosts: lab
    become: True
    gather_facts: False
@@ -12,18 +12,17 @@
       - "php"
       - "nc"
       - "socat"
-
    roles:
      - ansible-role-hosts-inventory
 
- - name: do the httpd and content
+ - name: install httpd and add content
    hosts: lab
    become: True
    roles:
      - ansible-role-apache
      - httpd_content
 
- - name: do the lb
+ - name: install and configure the load balancing
    hosts: lab
    become: True
    roles:
